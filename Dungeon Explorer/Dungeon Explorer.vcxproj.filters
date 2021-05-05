@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\core">
+      <UniqueIdentifier>{7197d1f2-149b-40fd-9997-673c29fc661d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\core\Game Object">
+      <UniqueIdentifier>{b264c897-11c5-4ec4-928c-3b86a327e461}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Player">
+      <UniqueIdentifier>{47c47129-e8ec-447d-bcbc-09ee0b87be26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\core\Map">
+      <UniqueIdentifier>{76ddbf00-0b2e-4f5f-8729-5b7fbfb0a4fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\core\Map\Room">
+      <UniqueIdentifier>{185a08a3-729f-47b7-89bc-bd4c451f41dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\core\Entity">
+      <UniqueIdentifier>{cf481c9c-c4ff-4828-85b8-2bc27c906fa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Game">
+      <UniqueIdentifier>{bc59ec41-6d00-42cd-994a-b6d696517248}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Game Object\GameObject.cpp">
+      <Filter>Исходные файлы\core\Game Object</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Entity\Entity.cpp">
+      <Filter>Исходные файлы\core\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Player\Player.cpp">
+      <Filter>Исходные файлы\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Map\Room\Room.cpp">
+      <Filter>Исходные файлы\core\Map\Room</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Game.cpp">
+      <Filter>Исходные файлы\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Map\Map.cpp">
+      <Filter>Исходные файлы\core\Map</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="core\Game Object\GameObject.h">
+      <Filter>Исходные файлы\core\Game Object</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Map\Map.h">
+      <Filter>Исходные файлы\core\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Player\Player.h">
+      <Filter>Исходные файлы\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Entity\Entity.h">
+      <Filter>Исходные файлы\core\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Game.h">
+      <Filter>Исходные файлы\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Map\Room\Room.h">
+      <Filter>Исходные файлы\core\Map\Room</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
