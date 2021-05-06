@@ -151,6 +151,7 @@
     <ClCompile Include="core\Game Object\GameObject.cpp" />
     <ClCompile Include="core\Map\Map.cpp" />
     <ClCompile Include="core\Map\Room\Room.cpp" />
+    <ClCompile Include="core\Renderer\Renderer.cpp" />
     <ClCompile Include="Game\Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player\Player.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="core\Game Object\GameObject.h" />
     <ClInclude Include="core\Map\Map.h" />
     <ClInclude Include="core\Map\Room\Room.h" />
+    <ClInclude Include="core\Renderer\Renderer.h" />
     <ClInclude Include="Game\Game.h" />
     <ClInclude Include="Player\Player.h" />
   </ItemGroup>

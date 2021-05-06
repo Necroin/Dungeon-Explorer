@@ -3,8 +3,8 @@
 
 void Game::set_console_parameters()
 {
-	set_console_font(10);
-	set_fullscreen();
+	//set_console_font(10);
+	//set_fullscreen();
 }
 
 void Game::set_console_font(int font_size)
@@ -51,11 +51,31 @@ bool Game::is_active() const
 
 void Game::run()
 {
+	_renderer.swap_surfaces();
+	action();
+	update();
+	render();
+}
+
+void Game::action()
+{
 	for (auto&& entity : _entities) {
 		entity->action(_entities);
 	}
+}
 
+void Game::update()
+{
 	for (auto&& entity : _entities) {
 		entity->update();
 	}
+}
+
+void Game::render()
+{
+	_map.draw();
+	for (auto&& entity : _entities) {
+		entity->render();
+	}
+	_renderer.render();
 }

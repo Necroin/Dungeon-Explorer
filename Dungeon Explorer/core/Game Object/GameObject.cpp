@@ -2,16 +2,14 @@
 #include <Windows.h>
 
 
-void GameObject::draw_symbol(char symbol, int x, int y, int color, size_t count)
-{
-	DWORD written;
-	decltype(auto) handle = GetStdHandle(STD_OUTPUT_HANDLE);
-	FillConsoleOutputAttribute(handle, (WORD)color, count, COORD{ static_cast<SHORT>(x), static_cast<SHORT>(y) }, &written);
-	FillConsoleOutputCharacterA(handle, static_cast<CHAR>(symbol), count, COORD{ static_cast<SHORT>(x), static_cast<SHORT>(y) }, &written);
+tag_t get_class_tag() {
+	static tag_t value = 0;
+	return value++;
 }
 
-GameObject::GameObject(GameRect position) :
-	_position(position)
+GameObject::GameObject(GameRect position, tag_t tag) :
+	_position(position),
+	_tag(tag)
 {}
 
 GameRect::GameRect(int x, int y, int width, int height) :

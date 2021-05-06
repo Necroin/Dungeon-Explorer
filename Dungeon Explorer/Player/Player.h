@@ -5,9 +5,8 @@
 
 class Player : public Entity {
 private:
-	void shift_console_up();
 public:
-	Player(Map& map, char symbol, int x, int y, int health);
+	Player(Map& map, Renderer& renderer, char symbol, int x, int y, int health);
 
 	virtual void action(std::list<std::unique_ptr<Entity>>& entities) override;
 	virtual void update() override;

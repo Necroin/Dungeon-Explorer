@@ -2,6 +2,15 @@
 #ifndef _GAMEOBJECT_H_
 #define _GAMEOBJECT_H_
 
+using tag_t = size_t;
+
+tag_t get_class_tag();
+
+template<class _Type>
+size_t get_class_tag() {
+	static tag_t value = get_class_tag();
+	return value;
+}
 
 struct GameRect {
 	GameRect(int x, int y, int width, int height);
@@ -14,6 +23,7 @@ struct GameRect {
 class GameObject {
 protected:
 	GameRect _position;
+	tag_t _tag;
 
 	enum Color : int {
 		Black = 0,
@@ -34,10 +44,10 @@ protected:
 		White = 15
 	};
 
-	static void draw_symbol(char symbol, int x, int y, int color, size_t count = 1);
 public:
-	GameObject(GameRect position);
-	virtual void update() = 0;
+	GameObject(GameRect position, tag_t tag);
+	virtual void update() {}
+	virtual void render() {}
 	virtual ~GameObject() {}
 };
 #endif

@@ -34,6 +34,9 @@
     <Filter Include="Исходные файлы\Game">
       <UniqueIdentifier>{bc59ec41-6d00-42cd-994a-b6d696517248}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\core\Renderer">
+      <UniqueIdentifier>{102caa83-f806-4c1b-880d-99695c91bc3c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -57,6 +60,9 @@
     <ClCompile Include="core\Map\Map.cpp">
       <Filter>Исходные файлы\core\Map</Filter>
     </ClCompile>
+    <ClCompile Include="core\Renderer\Renderer.cpp">
+      <Filter>Исходные файлы\core\Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\Game Object\GameObject.h">
@@ -76,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="core\Map\Room\Room.h">
       <Filter>Исходные файлы\core\Map\Room</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Renderer\Renderer.h">
+      <Filter>Исходные файлы\core\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
