@@ -1,8 +1,9 @@
 #include "Map.h"
 
-Map::Map(int x_centre, int y_centre) : 
+Map::Map(Renderer& renderer, int x_centre, int y_centre) :
 	_x_centre(x_centre),
-	_y_centre(y_centre)
+	_y_centre(y_centre),
+	_renderer(renderer)
 {
 	generate_rooms_in_map(_x_centre, _y_centre);
 }
@@ -11,7 +12,7 @@ void Map::generate_rooms_in_map(int x, int y){
 	int room_w = 20;
 	int room_h = 20;
 	GameRect rect = GameRect(x - room_w/2, y - room_h/2, room_w, room_h);
-	Room room = Room(0, rect);
+	Room room = Room(_renderer, 0, rect);
 	_rooms.push_back(room);
 }
 

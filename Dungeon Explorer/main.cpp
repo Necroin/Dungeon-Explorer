@@ -3,7 +3,7 @@
 #include <thread>
 
 int main() {
-	constexpr int FPS = 60;
+	constexpr int FPS = 30;
 	std::chrono::milliseconds frame_delay{ 1000 / FPS };
 	Game game;
 	while (game.is_active()) {

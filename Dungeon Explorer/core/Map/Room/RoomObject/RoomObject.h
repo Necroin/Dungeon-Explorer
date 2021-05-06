@@ -2,6 +2,7 @@
 #ifndef _ROOMOBJECT_H_
 #define _ROOMOBJECT_H_
 #include "../../../Game Object/GameObject.h"
+#include "../../../Renderer/Renderer.h"
 #include "AsciiSymbol.h"
 
 class RoomObject;
@@ -17,9 +18,9 @@ public:
 
 private:
 	int _room_object_id;
-
+	Renderer& _renderer;
 public:
-	RoomObject(int room_object_id, GameRect position);
+	RoomObject(Renderer& renderer, int room_object_id, GameRect position);
 
 	void fill_room_empty(char filling_symbol, int x, int y, int w, int h);
 

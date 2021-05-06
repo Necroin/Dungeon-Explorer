@@ -1,8 +1,9 @@
 #include "Room.h"
 
-Room::Room(int room_id, GameRect position) :
-	GameObject(position),
-	_room_id(room_id)
+Room::Room(Renderer& renderer, int room_id, GameRect position) :
+	GameObject(position, get_class_tag<Room>()),
+	_room_id(room_id),
+	_renderer(renderer)
 {
 	generate_room();
 }
@@ -18,10 +19,10 @@ void Room::draw_basic_room()
 
 void Room::generate_basic_room() {
 	try {
-		RoomObject border = RoomObject(RoomObject::ObjectTypes::BORDER, _position);
+		RoomObject border = RoomObject(_renderer, RoomObject::ObjectTypes::BORDER, _position);
 		room_objects.push_back(border);
 		_position.x += _position.width;
-		RoomObject bomb = RoomObject(RoomObject::ObjectTypes::BOMB, _position);
+		RoomObject bomb = RoomObject(_renderer, RoomObject::ObjectTypes::BOMB, _position);
 		room_objects.push_back(bomb);
 	}
 	catch(std::exception e){

@@ -17,9 +17,9 @@ public:
 private:
 	int _room_id;
 	std::vector<RoomObject> room_objects;
-
+	Renderer& _renderer;
 public:
-	Room(int room_id, GameRect position);
+	Room(Renderer& renderer, int room_id, GameRect position);
 	
 	/* Types of room */
 	void generate_basic_room();

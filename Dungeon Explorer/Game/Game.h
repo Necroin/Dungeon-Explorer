@@ -15,10 +15,6 @@ private:
 	Map _map;
 
 	std::list<std::unique_ptr<Entity>> _entities;
-private:
-	void set_console_parameters();
-	void set_console_font(int font_size);
-	void set_fullscreen();
 public:
 	Game();
 	bool is_active() const;

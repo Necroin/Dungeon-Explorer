@@ -1,27 +1,28 @@
 #include "RoomObject.h"
 
-RoomObject::RoomObject(int room_object_id, GameRect position) :
-	GameObject(position),
-	_room_object_id(room_object_id)
+RoomObject::RoomObject(Renderer& renderer, int room_object_id, GameRect position) :
+	GameObject(position, get_class_tag<RoomObject>()),
+	_room_object_id(room_object_id),
+	_renderer(renderer)
 {}
 
 
 void  RoomObject::fill_room_empty(char filling_symbol, int x, int y, int w, int h)
 {
 	for (int i = 0; i < h; ++i) {
-		draw_symbol(filling_symbol, x, y + i, AsciiSymbols::empty_place_color, w);
+		_renderer.draw_symbol(filling_symbol, x, y + i, AsciiSymbols::empty_place_color, w);
 	}
 }
 
 
 void RoomObject::draw_room_border_symbol(int x, int y, int color, size_t count)
 {
-	draw_symbol(AsciiSymbols::room_border_basic, x, y, color, count);
+	_renderer.draw_symbol(AsciiSymbols::room_border_basic, x, y, color, count);
 }
 
 void RoomObject::draw_specific_symbol(char symbol, int x, int y, int color)
 {
-	draw_symbol(symbol, x, y, color, 1);
+	_renderer.draw_symbol(symbol, x, y, color, 1);
 }
 
 void RoomObject::draw_strange_bomb() {

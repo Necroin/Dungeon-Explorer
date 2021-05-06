@@ -24,11 +24,10 @@ class GameObject {
 protected:
 	GameRect _position;
 	tag_t _tag;
-
-	static void draw_symbol(char symbol, int x, int y, int color, size_t count = 1);
 public:
-	GameObject(GameRect position);
-	virtual void update() = 0;
+	GameObject(GameRect position, tag_t tag);
+	virtual void update() {}
+	virtual void render() {}
 	virtual ~GameObject() {}
 
 	enum Color : int {
@@ -49,11 +48,5 @@ public:
 		Yellow = 14,
 		White = 15
 	};
-
-	static void draw_symbol(char symbol, int x, int y, int color, size_t count = 1);
-public:
-	GameObject(GameRect position);
-	virtual void update() = 0;
-	virtual ~GameObject() {}
 };
 #endif

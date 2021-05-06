@@ -1,0 +1,11 @@
+﻿  main.cpp
+D:\C++\Dungeon Explorer\Dungeon Explorer\core\Map\Room\RoomObject\AsciiSymbol.h(9,48): warning C4309: инициализация: усечение константного значения
+D:\C++\Dungeon Explorer\Dungeon Explorer\core\Map\Room\RoomObject\AsciiSymbol.h(13,56): warning C4309: инициализация: усечение константного значения
+D:\C++\Dungeon Explorer\Dungeon Explorer\core\Map\Room\RoomObject\AsciiSymbol.h(14,57): warning C4309: инициализация: усечение константного значения
+D:\C++\Dungeon Explorer\Dungeon Explorer\core\Map\Room\RoomObject\AsciiSymbol.h(15,58): warning C4309: инициализация: усечение константного значения
+D:\C++\Dungeon Explorer\Dungeon Explorer\core\Map\Room\RoomObject\AsciiSymbol.h(16,59): warning C4309: инициализация: усечение константного значения
+D:\C++\Dungeon Explorer\Dungeon Explorer\core\Map\Room\RoomObject\AsciiSymbol.h(17,50): warning C4309: инициализация: усечение константного значения
+D:\C++\Dungeon Explorer\Dungeon Explorer\core\Map\Room\RoomObject\AsciiSymbol.h(18,45): warning C4309: инициализация: усечение константного значения
+D:\C++\Dungeon Explorer\Dungeon Explorer\core\Map\Room\RoomObject\AsciiSymbol.h(19,43): warning C4309: инициализация: усечение константного значения
+D:\C++\Dungeon Explorer\Dungeon Explorer\core\Map\Room\Room.h(14,48): warning C4309: инициализация: усечение константного значения
+  Dungeon Explorer.vcxproj -> D:\C++\Dungeon Explorer\Debug\Dungeon Explorer.exe

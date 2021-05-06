@@ -15,10 +15,10 @@ private:
 	void clear_surface(HANDLE surface);
 public:
 	Renderer();
+	~Renderer();
 public:
 	void draw_symbol(char symbol, int x, int y, int color, size_t count = 1);
 	void swap_surfaces();
 	void render();
-	void set_fullscreen();
 };
 #endif
