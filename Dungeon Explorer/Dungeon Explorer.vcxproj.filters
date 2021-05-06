@@ -22,23 +22,26 @@
     <Filter Include="Исходные файлы\Player">
       <UniqueIdentifier>{47c47129-e8ec-447d-bcbc-09ee0b87be26}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\core\Map">
-      <UniqueIdentifier>{76ddbf00-0b2e-4f5f-8729-5b7fbfb0a4fa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\core\Map\Room">
-      <UniqueIdentifier>{185a08a3-729f-47b7-89bc-bd4c451f41dd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Исходные файлы\core\Entity">
       <UniqueIdentifier>{cf481c9c-c4ff-4828-85b8-2bc27c906fa0}</UniqueIdentifier>
     </Filter>
     <Filter Include="Исходные файлы\Game">
       <UniqueIdentifier>{bc59ec41-6d00-42cd-994a-b6d696517248}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\core\Map\Room\RoomObject">
-      <UniqueIdentifier>{495b0ba0-5244-4e45-b05a-3555f9d032b5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Исходные файлы\Renderer">
       <UniqueIdentifier>{a79fd4bb-61f4-4607-bd30-4f6fcb2ee2be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Map">
+      <UniqueIdentifier>{76ddbf00-0b2e-4f5f-8729-5b7fbfb0a4fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Map\Room">
+      <UniqueIdentifier>{185a08a3-729f-47b7-89bc-bd4c451f41dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Map\Room\RoomObject">
+      <UniqueIdentifier>{495b0ba0-5244-4e45-b05a-3555f9d032b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\core\Camera">
+      <UniqueIdentifier>{bbbd20b3-5c96-4e7c-ada7-e00acd796a2a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -54,28 +57,28 @@
     <ClCompile Include="Player\Player.cpp">
       <Filter>Исходные файлы\Player</Filter>
     </ClCompile>
-    <ClCompile Include="core\Map\Room\Room.cpp">
-      <Filter>Исходные файлы\core\Map\Room</Filter>
-    </ClCompile>
     <ClCompile Include="Game\Game.cpp">
       <Filter>Исходные файлы\Game</Filter>
     </ClCompile>
-    <ClCompile Include="core\Map\Map.cpp">
-      <Filter>Исходные файлы\core\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="core\Map\Room\RoomObject\RoomObject.cpp">
-      <Filter>Исходные файлы\core\Map\Room\RoomObject</Filter>
-    </ClCompile>
     <ClCompile Include="core\Renderer\Renderer.cpp">
       <Filter>Исходные файлы\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Map\Map.cpp">
+      <Filter>Исходные файлы\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Map\Room\Room.cpp">
+      <Filter>Исходные файлы\Map\Room</Filter>
+    </ClCompile>
+    <ClCompile Include="Map\Room\RoomObject\RoomObject.cpp">
+      <Filter>Исходные файлы\Map\Room\RoomObject</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Camera\Camera.cpp">
+      <Filter>Исходные файлы\core\Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\Game Object\GameObject.h">
       <Filter>Исходные файлы\core\Game Object</Filter>
-    </ClInclude>
-    <ClInclude Include="core\Map\Map.h">
-      <Filter>Исходные файлы\core\Map</Filter>
     </ClInclude>
     <ClInclude Include="Player\Player.h">
       <Filter>Исходные файлы\Player</Filter>
@@ -86,17 +89,26 @@
     <ClInclude Include="Game\Game.h">
       <Filter>Исходные файлы\Game</Filter>
     </ClInclude>
-    <ClInclude Include="core\Map\Room\Room.h">
-      <Filter>Исходные файлы\core\Map\Room</Filter>
-    </ClInclude>
-    <ClInclude Include="core\Map\Room\RoomObject\RoomObject.h">
-      <Filter>Исходные файлы\core\Map\Room\RoomObject</Filter>
-    </ClInclude>
-    <ClInclude Include="core\Map\Room\RoomObject\AsciiSymbol.h">
-      <Filter>Исходные файлы\core\Map\Room\RoomObject</Filter>
-    </ClInclude>
     <ClInclude Include="core\Renderer\Renderer.h">
       <Filter>Исходные файлы\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Map\Map.h">
+      <Filter>Исходные файлы\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Map\Room\Room.h">
+      <Filter>Исходные файлы\Map\Room</Filter>
+    </ClInclude>
+    <ClInclude Include="Map\Room\RoomObject\RoomObject.h">
+      <Filter>Исходные файлы\Map\Room\RoomObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Map\Room\RoomObject\AsciiSymbol.h">
+      <Filter>Исходные файлы\Map\Room\RoomObject</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Camera\Camera.h">
+      <Filter>Исходные файлы\core\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="core\std_includes.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

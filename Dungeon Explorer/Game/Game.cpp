@@ -3,9 +3,12 @@
 
 
 Game::Game() :
-	_map(_renderer, 20, 20)
+	_renderer(_camera),
+	_map(_renderer)
 {
-	set_console_parameters();
+	auto screen_size = _renderer.get_screen_size();
+	_camera.move_to(_map.get_x_centre() - screen_size.X / 2 + 1, _map.get_y_centre() - screen_size.Y / 2 + 1);
+
 	_map.draw();
 
 	_entities.emplace_back(std::make_unique<Player>(_map, _renderer, '@', _map.get_x_centre(), _map.get_y_centre(), 10));

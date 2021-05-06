@@ -3,10 +3,7 @@
 #define _ENTITY_H_
 #include "../Game Object/GameObject.h"
 #include "../Renderer/Renderer.h"
-#include <vector>
-#include <list>
-
-#include "../Map/Map.h"
+#include "../../Map/Map.h"
 
 class Entity : public GameObject{
 protected:

@@ -1,6 +1,7 @@
 #pragma once
 #ifndef _GAMEOBJECT_H_
 #define _GAMEOBJECT_H_
+#include "../std_includes.h"
 
 using tag_t = size_t;
 
@@ -14,6 +15,7 @@ size_t get_class_tag() {
 
 struct GameRect {
 	GameRect(int x, int y, int width, int height);
+	GameRect(int x, int y);
 	int x;
 	int y;
 	int width;
@@ -24,6 +26,9 @@ class GameObject {
 protected:
 	GameRect _position;
 	tag_t _tag;
+public:
+	const GameRect& get_position() const;
+	tag_t get_tag() const;
 public:
 	GameObject(GameRect position, tag_t tag);
 	virtual void update() {}

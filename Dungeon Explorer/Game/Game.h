@@ -1,9 +1,6 @@
 #pragma once
 #ifndef _GAME_H_
 #define _GAME_H_
-#include <memory>
-
-#include "../core/Map/Map.h"
 #include "../Player/Player.h"
 #include "../core/Renderer/Renderer.h"
 
@@ -11,6 +8,7 @@ class Game {
 private:
 	bool _is_active = true;
 
+	Camera _camera;
 	Renderer _renderer;
 	Map _map;
 

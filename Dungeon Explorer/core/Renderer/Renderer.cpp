@@ -1,7 +1,8 @@
 #include "Renderer.h"
 
-Renderer::Renderer() :
-	_current_surface_index(0)
+Renderer::Renderer(Camera& camera) :
+	_current_surface_index(0),
+	_camera(camera)
 {
 	for (auto&& surface : _surfaces) {
 		surface = CreateConsoleScreenBuffer(GENERIC_WRITE | GENERIC_READ, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
@@ -36,10 +37,28 @@ Renderer::Renderer() :
 		font_info.FontFamily = FF_DONTCARE;
 		font_info.FontWeight = FW_NORMAL;
 		SetCurrentConsoleFontEx(surface, TRUE, &font_info);
+
+		CONSOLE_CURSOR_INFO cursor_info;
+		GetConsoleCursorInfo(surface, &cursor_info);
+		cursor_info.bVisible = false;
+		SetConsoleCursorInfo(surface, &cursor_info);
+
+		DWORD console_prev_mode;
+		GetConsoleMode(surface, &console_prev_mode);
+		SetConsoleMode(surface, console_prev_mode & ~ENABLE_QUICK_EDIT_MODE);
 	}
 
+	HWND hwnd = GetConsoleWindow();
+	EnableScrollBar(hwnd, SB_BOTH, ESB_DISABLE_BOTH);
 	_current_surface = _surfaces[_current_surface_index];
 	SetConsoleActiveScreenBuffer(_current_surface);
+}
+
+Renderer::~Renderer()
+{
+	for (auto&& surface : _surfaces) {
+		CloseHandle(surface);
+	}
 }
 
 void Renderer::clear_surface(HANDLE surface)
@@ -54,21 +73,27 @@ void Renderer::clear_surface(HANDLE surface)
 void Renderer::draw_symbol(char symbol, int x, int y, int color, size_t count)
 {
 	DWORD written;
-	FillConsoleOutputAttribute(_current_surface, (WORD)color, count, COORD{ static_cast<SHORT>(x), static_cast<SHORT>(y) }, &written);
-	FillConsoleOutputCharacterA(_current_surface, static_cast<CHAR>(symbol), count, COORD{ static_cast<SHORT>(x), static_cast<SHORT>(y) }, &written);
+	COORD coordinates { _camera.translate_x_coordinate(x), _camera.translate_y_coordinate(y) };
+	FillConsoleOutputAttribute(_current_surface, (WORD)color, count, coordinates, &written);
+	FillConsoleOutputCharacterA(_current_surface, static_cast<CHAR>(symbol), count, coordinates, &written);
+}
+
+Camera& Renderer::get_camera() const
+{
+	return _camera;
+}
+
+COORD Renderer::get_screen_size()
+{
+	CONSOLE_SCREEN_BUFFER_INFO buffer_info;
+	GetConsoleScreenBufferInfo(_current_surface, &buffer_info);
+	return buffer_info.dwSize;
 }
 
 void Renderer::swap_surfaces()
 {
 	++_current_surface_index %= _surfaces_count;
 	_current_surface = _surfaces[_current_surface_index];
-}
-
-Renderer::~Renderer()
-{
-	for (auto&& surface : _surfaces) {
-		CloseHandle(surface);
-	}
 }
 
 void Renderer::render()

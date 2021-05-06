@@ -1,7 +1,7 @@
 #pragma once
 #ifndef _ASCIISYMBOL_H_
 #define _ASCIISYMBOL_H_
-#include "../../../Game Object/GameObject.h"
+#include "../../../core/Game Object/GameObject.h"
 
 class AsciiSymbols{
 
@@ -20,8 +20,5 @@ public:
 
 public:
 	AsciiSymbols() {};
-
 };
-
-
 #endif

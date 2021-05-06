@@ -1,8 +1,8 @@
 #include "Map.h"
 
-Map::Map(Renderer& renderer, int x_centre, int y_centre) :
-	_x_centre(x_centre),
-	_y_centre(y_centre),
+Map::Map(Renderer& renderer) :
+	_x_centre(MAXUINT32 / 2),
+	_y_centre(MAXUINT32 / 2),
 	_renderer(renderer)
 {
 	generate_rooms_in_map(_x_centre, _y_centre);

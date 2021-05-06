@@ -1,8 +1,8 @@
 #pragma once
 #ifndef _ROOMOBJECT_H_
 #define _ROOMOBJECT_H_
-#include "../../../Game Object/GameObject.h"
-#include "../../../Renderer/Renderer.h"
+#include "../../../core/Game Object/GameObject.h"
+#include "../../../core/Renderer/Renderer.h"
 #include "AsciiSymbol.h"
 
 class RoomObject;
