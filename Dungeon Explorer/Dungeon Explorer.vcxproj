@@ -158,6 +158,7 @@
     <ClCompile Include="core\Map\Room\RoomObject\RoomObject.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="core\Map\Room\RoomObject\AsciiSymbol.h" />
     <ClInclude Include="core\Entity\Entity.h" />
     <ClInclude Include="core\Game Object\GameObject.h" />
     <ClInclude Include="core\Map\Map.h" />
