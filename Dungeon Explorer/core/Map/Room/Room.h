@@ -4,6 +4,10 @@
 #include <vector>
 #include <functional>
 #include "../../Game Object/GameObject.h"
+#include "RoomObject/RoomObject.h"
+
+class Room;
+typedef void (Room::* RoomFunctions) ();
 
 class Room : public GameObject {
 public:
@@ -12,27 +16,29 @@ public:
 	inline static const char room_border_basic = '#';
 private:
 	int _room_id;
+	std::vector<RoomObject> room_objects;
+
 public:
 	Room(int room_id, GameRect position);
 	
-	/* Draw room */
-	void draw();
-
-	void fill_room_empty(char filling_symbol, int x, int y, int w, int h);
-	
 	/* Types of room */
+	void generate_basic_room();
 	void draw_basic_room();
-	
-	/*std::vector<decltype(draw_basic_room)> draw_room_functions =  { 
-		&draw_basic_room,
-		&draw_basic_room };*/
 
-	/*std::vector<std::function<void()>> draw_room_functions = {
-		std::function(&draw_basic_room)
-	};*/
-	
-	/* Types of symbols */
-	void draw_room_border_symbol(int x, int y, int color, size_t count);
+	/* Draw room */
+	void generate_room();
+	RoomFunctions generateFunctions[2] =
+	{
+		&Room::generate_basic_room,
+		&Room::generate_basic_room
+	};
+
+	void draw();
+	RoomFunctions drawFunctions[2] =
+	{
+		&Room::draw_basic_room, 
+		&Room::draw_basic_room
+	};
 
 	virtual void update() {}
 };

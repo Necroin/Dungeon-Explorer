@@ -1,0 +1,72 @@
+﻿  Game.cpp
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(11,48): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(15,56): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(16,57): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(17,58): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(18,59): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(19,50): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(20,45): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(21,43): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\Room.h(14,48): warning C4309: инициализация: усечение константного значения
+  Player.cpp
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(11,48): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(15,56): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(16,57): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(17,58): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(18,59): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(19,50): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(20,45): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(21,43): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\Room.h(14,48): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\Player\Player.cpp(8,12): warning C4101: ci: неиспользованная локальная переменная
+  Entity.cpp
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(11,48): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(15,56): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(16,57): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(17,58): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(18,59): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(19,50): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(20,45): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(21,43): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\Room.h(14,48): warning C4309: инициализация: усечение константного значения
+  Map.cpp
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(11,48): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(15,56): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(16,57): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(17,58): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(18,59): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(19,50): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(20,45): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(21,43): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\Room.h(14,48): warning C4309: инициализация: усечение константного значения
+  Room.cpp
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(11,48): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(15,56): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(16,57): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(17,58): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(18,59): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(19,50): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(20,45): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(21,43): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\Room.h(14,48): warning C4309: инициализация: усечение константного значения
+  RoomObject.cpp
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(11,48): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(15,56): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(16,57): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(17,58): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(18,59): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(19,50): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(20,45): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(21,43): warning C4309: инициализация: усечение константного значения
+  main.cpp
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(11,48): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(15,56): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(16,57): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(17,58): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(18,59): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(19,50): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(20,45): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\RoomObject\RoomObject.h(21,43): warning C4309: инициализация: усечение константного значения
+D:\GameDangeon\Dungeon Explorer\core\Map\Room\Room.h(14,48): warning C4309: инициализация: усечение константного значения
+  Создание кода...
+  Dungeon Explorer.vcxproj -> D:\GameDangeon\x64\Debug\Dungeon Explorer.exe
