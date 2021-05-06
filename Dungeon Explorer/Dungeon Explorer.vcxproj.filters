@@ -86,5 +86,8 @@
     <ClInclude Include="core\Map\Room\RoomObject\RoomObject.h">
       <Filter>Исходные файлы\core\Map\Room\RoomObject</Filter>
     </ClInclude>
+    <ClInclude Include="core\Map\Room\RoomObject\AsciiSymbol.h">
+      <Filter>Исходные файлы\core\Map\Room\RoomObject</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
