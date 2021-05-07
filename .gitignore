@@ -1,5 +1,9 @@
 *.vs
+*ConsoleGameEngine/ConsoleGameEngine/Debug
+*ConsoleGameEngine/ConsoleGameEngine/Release
 
+*Dungeon Explorer/Dungeon Explorer/Debug
+*Dungeon Explorer/Dungeon Explorer/Release
 
 # Prerequisites
 *.d
