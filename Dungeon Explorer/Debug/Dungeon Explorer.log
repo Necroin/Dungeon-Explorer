@@ -1,6 +1,1 @@
-﻿  Renderer.cpp
-D:\C++\Dungeon Explorer\Dungeon Explorer\core\Renderer\Renderer.cpp(18,24): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
-D:\C++\Dungeon Explorer\Dungeon Explorer\core\Renderer\Renderer.cpp(18,35): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
-D:\C++\Dungeon Explorer\Dungeon Explorer\core\Renderer\Renderer.cpp(76,52): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
-D:\C++\Dungeon Explorer\Dungeon Explorer\core\Renderer\Renderer.cpp(76,87): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
-  Dungeon Explorer.vcxproj -> D:\C++\Dungeon Explorer\Debug\Dungeon Explorer.exe
+﻿  Dungeon Explorer.vcxproj -> D:\C++\Dungeon Explorer\Debug\Dungeon Explorer.exe

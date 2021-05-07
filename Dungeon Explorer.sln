@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dungeon Explorer", "Dungeon Explorer\Dungeon Explorer.vcxproj", "{B87F8A76-DF55-4FF6-BE4C-A1C03EA66D16}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleGameEngine", "ConsoleGameEngine\ConsoleGameEngine.vcxproj", "{27E90595-188C-4165-8F78-BB764DC11F4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{B87F8A76-DF55-4FF6-BE4C-A1C03EA66D16}.Release|x64.Build.0 = Release|x64
 		{B87F8A76-DF55-4FF6-BE4C-A1C03EA66D16}.Release|x86.ActiveCfg = Release|Win32
 		{B87F8A76-DF55-4FF6-BE4C-A1C03EA66D16}.Release|x86.Build.0 = Release|Win32
+		{27E90595-188C-4165-8F78-BB764DC11F4C}.Debug|x64.ActiveCfg = Debug|x64
+		{27E90595-188C-4165-8F78-BB764DC11F4C}.Debug|x64.Build.0 = Debug|x64
+		{27E90595-188C-4165-8F78-BB764DC11F4C}.Debug|x86.ActiveCfg = Debug|Win32
+		{27E90595-188C-4165-8F78-BB764DC11F4C}.Debug|x86.Build.0 = Debug|Win32
+		{27E90595-188C-4165-8F78-BB764DC11F4C}.Release|x64.ActiveCfg = Release|x64
+		{27E90595-188C-4165-8F78-BB764DC11F4C}.Release|x64.Build.0 = Release|x64
+		{27E90595-188C-4165-8F78-BB764DC11F4C}.Release|x86.ActiveCfg = Release|Win32
+		{27E90595-188C-4165-8F78-BB764DC11F4C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
