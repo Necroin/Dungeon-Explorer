@@ -1,6 +1,5 @@
 *.vs
-*PRNG-on-GF/PRNG-on-GF/Debug
-*PRNG-on-GF/PRNG-on-GF/Release
+
 
 # Prerequisites
 *.d
