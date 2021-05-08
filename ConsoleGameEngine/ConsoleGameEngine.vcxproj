@@ -147,18 +147,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Bases\Bases_include.h" />
+    <ClInclude Include="src\Bases\Color.h" />
+    <ClInclude Include="src\Bases\GameRect.h" />
+    <ClInclude Include="src\Bases\Tag\Tag.h" />
     <ClInclude Include="src\Camera\Camera.h" />
     <ClInclude Include="src\CGE_include\CGE.h" />
+    <ClInclude Include="src\Event System\EventSystem.h" />
     <ClInclude Include="src\FSM\FSM.h" />
     <ClInclude Include="src\Game Object\GameObject.h" />
     <ClInclude Include="src\CGEGame\CGEGame.h" />
     <ClInclude Include="src\Renderer\Renderer.h" />
     <ClInclude Include="src\std_includes.h" />
+    <ClInclude Include="src\UI\Layout\HorizontalLayout\HorizontalLayout.h" />
+    <ClInclude Include="src\UI\Layout\Layout.h" />
+    <ClInclude Include="src\UI\Layout\VerticalLayout\VerticalLayout.h" />
+    <ClInclude Include="src\UI\PushButton\PushButton.h" />
+    <ClInclude Include="src\UI\Text\Text.h" />
+    <ClInclude Include="src\UI\UI.h" />
+    <ClInclude Include="src\UI\UIEvent\UIEvent.h" />
+    <ClInclude Include="src\UI\UIObject\UIObject.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Bases\Tag\Tag.cpp" />
     <ClCompile Include="src\Camera\Camera.cpp" />
     <ClCompile Include="src\Game Object\GameObject.cpp" />
     <ClCompile Include="src\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\UI\Layout\HorizontalLayout\HorizontalLayout.cpp" />
+    <ClCompile Include="src\UI\Layout\Layout.cpp" />
+    <ClCompile Include="src\UI\Layout\VerticalLayout\VerticalLayout.cpp" />
+    <ClCompile Include="src\UI\PushButton\PushButton.cpp" />
+    <ClCompile Include="src\UI\Text\Text.cpp" />
+    <ClCompile Include="src\UI\UIEvent\UIEvent.cpp" />
+    <ClCompile Include="src\UI\UIObject\UIObject.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

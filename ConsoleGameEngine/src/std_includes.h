@@ -10,4 +10,6 @@
 #include <memory>
 #include <chrono>
 #include <thread>
+#include <string>
+#include <string_view>
 #endif

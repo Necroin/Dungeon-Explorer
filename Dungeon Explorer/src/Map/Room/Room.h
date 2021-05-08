@@ -9,7 +9,7 @@ typedef void (Room::* RoomFunctions) ();
 class Room : public CGE::GameObject {
 public:
 	inline static const char empty_place_symbol = 249;
-	inline static const char empty_place_color = Color::DarkGray;
+	inline static const char empty_place_color = CGE::Color::DarkGray;
 	inline static const char room_border_basic = '#';
 private:
 	int _room_id;

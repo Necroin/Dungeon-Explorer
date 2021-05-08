@@ -11,12 +11,12 @@ Player::Player(Map& map, CGE::Renderer& renderer, int x, int y, int health) :
 		&x = _position.x,
 		&y = _position.y
 	]() {
-		renderer.draw_symbol('O', x, y - 1, Color::Green);
-		renderer.draw_symbol('#', x, y, Color::Green);
-		renderer.draw_symbol('/', x - 1, y, Color::Green);
-		renderer.draw_symbol('\\', x + 1, y, Color::Green);
-		renderer.draw_symbol('/', x - 1, y + 1, Color::Green);
-		renderer.draw_symbol('\\', x + 1, y + 1, Color::Green);
+		renderer.draw_symbol('O', x, y - 1, CGE::Color::Green);
+		renderer.draw_symbol('#', x, y, CGE::Color::Green);
+		renderer.draw_symbol('/', x - 1, y, CGE::Color::Green);
+		renderer.draw_symbol('\\', x + 1, y, CGE::Color::Green);
+		renderer.draw_symbol('/', x - 1, y + 1, CGE::Color::Green);
+		renderer.draw_symbol('\\', x + 1, y + 1, CGE::Color::Green);
 		});
 
 	decltype(auto) move_left_state = _player_fsm.add_state([
@@ -27,20 +27,20 @@ Player::Player(Map& map, CGE::Renderer& renderer, int x, int y, int health) :
 			static int step = 0;
 			static const int del = 10;
 			if (step / del == 0) {
-				renderer.draw_symbol('O', x, y - 1, Color::Green); // head
-				renderer.draw_symbol('#', x, y, Color::Green); // body
-				renderer.draw_symbol('/', x - 1, y, Color::Green); // left hand
-				renderer.draw_symbol(46, x + 1, y, Color::Green); // right hand
-				renderer.draw_symbol('<', x, y + 1, Color::Green); // left leg
-				renderer.draw_symbol('\\', x + 1, y + 1, Color::Green); // right leg
+				renderer.draw_symbol('O', x, y - 1, CGE::Color::Green); // head
+				renderer.draw_symbol('#', x, y, CGE::Color::Green); // body
+				renderer.draw_symbol('/', x - 1, y, CGE::Color::Green); // left hand
+				renderer.draw_symbol(46, x + 1, y, CGE::Color::Green); // right hand
+				renderer.draw_symbol('<', x, y + 1, CGE::Color::Green); // left leg
+				renderer.draw_symbol('\\', x + 1, y + 1, CGE::Color::Green); // right leg
 			}
 			if (step / del == 1) {
-				renderer.draw_symbol('O', x, y - 1, Color::Green); // head
-				renderer.draw_symbol('#', x, y, Color::Green); // body
-				renderer.draw_symbol(46, x - 1, y, Color::Green); // left hand
-				renderer.draw_symbol('>', x + 1, y, Color::Green); // right hand
-				renderer.draw_symbol('|', x, y + 1, Color::Green); // left leg
-				renderer.draw_symbol('-', x + 1, y + 1, Color::Green); // right leg
+				renderer.draw_symbol('O', x, y - 1, CGE::Color::Green); // head
+				renderer.draw_symbol('#', x, y, CGE::Color::Green); // body
+				renderer.draw_symbol(46, x - 1, y, CGE::Color::Green); // left hand
+				renderer.draw_symbol('>', x + 1, y, CGE::Color::Green); // right hand
+				renderer.draw_symbol('|', x, y + 1, CGE::Color::Green); // left leg
+				renderer.draw_symbol('-', x + 1, y + 1, CGE::Color::Green); // right leg
 			}
 			++step %= (del * 2);
 		});
@@ -53,20 +53,20 @@ Player::Player(Map& map, CGE::Renderer& renderer, int x, int y, int health) :
 			static int step = 0;
 			static const int del = 10;
 			if (step / del == 0) {
-				renderer.draw_symbol('O', x, y - 1, Color::Green); // head
-				renderer.draw_symbol('#', x, y, Color::Green); // body
-				renderer.draw_symbol(46, x - 1, y, Color::Green); // left hand
-				renderer.draw_symbol('\\', x + 1, y, Color::Green); // right hand
-				renderer.draw_symbol('/', x - 1, y + 1, Color::Green); // left leg
-				renderer.draw_symbol('>', x, y + 1, Color::Green); // right leg
+				renderer.draw_symbol('O', x, y - 1, CGE::Color::Green); // head
+				renderer.draw_symbol('#', x, y, CGE::Color::Green); // body
+				renderer.draw_symbol(46, x - 1, y, CGE::Color::Green); // left hand
+				renderer.draw_symbol('\\', x + 1, y, CGE::Color::Green); // right hand
+				renderer.draw_symbol('/', x - 1, y + 1, CGE::Color::Green); // left leg
+				renderer.draw_symbol('>', x, y + 1, CGE::Color::Green); // right leg
 			}
 			if (step / del == 1) {
-				renderer.draw_symbol('O', x, y - 1, Color::Green); // head
-				renderer.draw_symbol('#', x, y, Color::Green); // body
-				renderer.draw_symbol('<', x - 1, y, Color::Green); // left hand
-				renderer.draw_symbol(46, x + 1, y, Color::Green); // right hand
-				renderer.draw_symbol('-', x - 1, y + 1, Color::Green); // left leg
-				renderer.draw_symbol('|', x, y + 1, Color::Green); // right leg
+				renderer.draw_symbol('O', x, y - 1, CGE::Color::Green); // head
+				renderer.draw_symbol('#', x, y, CGE::Color::Green); // body
+				renderer.draw_symbol('<', x - 1, y, CGE::Color::Green); // left hand
+				renderer.draw_symbol(46, x + 1, y, CGE::Color::Green); // right hand
+				renderer.draw_symbol('-', x - 1, y + 1, CGE::Color::Green); // left leg
+				renderer.draw_symbol('|', x, y + 1, CGE::Color::Green); // right leg
 			}
 			++step %= (del * 2);
 		});

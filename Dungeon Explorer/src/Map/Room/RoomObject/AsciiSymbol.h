@@ -7,7 +7,7 @@ class AsciiSymbols{
 
 public:
 	inline static const char empty_place_symbol = 249;
-	inline static const char empty_place_color = CGE::GameObject::Color::DarkGray;
+	inline static const char empty_place_color = CGE::Color::DarkGray;
 	inline static const char room_border_basic = '#';
 	
 	inline static const char double_line_corner_left_up = 201;

@@ -1,11 +1,6 @@
 #include "GameObject.h"
-#include <Windows.h>
 
 namespace CGE {
-	tag_t get_class_tag() {
-		static tag_t value = 0;
-		return value++;
-	}
 
 	const GameRect& GameObject::get_position() const
 	{

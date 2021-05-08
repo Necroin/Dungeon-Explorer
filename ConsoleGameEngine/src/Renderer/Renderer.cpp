@@ -13,6 +13,10 @@ namespace CGE {
 			throw std::exception("CreateConsoleScreenBuffer failed - (%d)");
 		}
 
+		DWORD console_prev_mode;
+		GetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), &console_prev_mode);
+		SetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), console_prev_mode & ~ENABLE_QUICK_EDIT_MODE);
+
 		for (auto&& surface : _surfaces) {
 			SetConsoleActiveScreenBuffer(surface);
 			int font_size = 10;
@@ -42,10 +46,6 @@ namespace CGE {
 			GetConsoleCursorInfo(surface, &cursor_info);
 			cursor_info.bVisible = false;
 			SetConsoleCursorInfo(surface, &cursor_info);
-
-			DWORD console_prev_mode;
-			GetConsoleMode(surface, &console_prev_mode);
-			SetConsoleMode(surface, console_prev_mode & ~ENABLE_QUICK_EDIT_MODE);
 		}
 
 		HWND current_console_window = GetConsoleWindow();
@@ -56,6 +56,8 @@ namespace CGE {
 
 		CONSOLE_SCREEN_BUFFER_INFO buffer_info;
 		GetConsoleScreenBufferInfo(_current_surface, &buffer_info);
+		_max_width = buffer_info.dwSize.X;
+		_max_height = buffer_info.dwSize.Y;
 		_camera.set_position({ 0,0, buffer_info.dwSize.X, buffer_info.dwSize.Y });
 	}
 
@@ -94,6 +96,51 @@ namespace CGE {
 		FillConsoleOutputAttribute(_current_surface, (WORD)color, count, coordinates, &written);
 		FillConsoleOutputCharacterA(_current_surface, static_cast<CHAR>(symbol), count, coordinates, &written);
 	}
+
+	void Renderer::draw_string(const char* string, size_t length, int x, int y, int color)
+	{
+		DWORD written;
+		COORD coordinates{ x, y };
+		decltype(auto) camera_pos = _camera.get_position();
+		if ((x + length - 1) >= (camera_pos.x + camera_pos.width)) {
+			length -= ((x + length) - (camera_pos.x + camera_pos.width));
+		}
+		FillConsoleOutputAttribute(_current_surface, (WORD)color, length, coordinates, &written);
+		WriteConsoleOutputCharacterA(GetStdHandle(STD_OUTPUT_HANDLE), string, length, coordinates, &written);
+	}
+
+	void Renderer::draw_symbol_absolute(char symbol, int x, int y, int color)
+	{
+		DWORD written;
+		COORD coordinates{ x, y };
+		FillConsoleOutputAttribute(_current_surface, (WORD)color, 1, coordinates, &written);
+		FillConsoleOutputCharacterA(_current_surface, static_cast<CHAR>(symbol), 1, coordinates, &written);
+	}
+
+	void Renderer::draw_symbol_absolute(char symbol, int x, int y, int color, size_t count)
+	{
+		DWORD written;
+		COORD coordinates{ x, y };
+		decltype(auto) camera_pos = _camera.get_position();
+		if ((x + count - 1) >= _max_width) {
+			count -= ((x + count) - _max_width);
+		}
+		FillConsoleOutputAttribute(_current_surface, (WORD)color, count, coordinates, &written);
+		FillConsoleOutputCharacterA(_current_surface, static_cast<CHAR>(symbol), count, coordinates, &written);
+	}
+
+	void Renderer::draw_string_absolute(const char* string, size_t length, int x, int y, int color)
+	{
+		DWORD written;
+		COORD coordinates{ x, y };
+		decltype(auto) camera_pos = _camera.get_position();
+		if ((x + length - 1) >= _max_width) {
+			length -= ((x + length) - _max_width);
+		}
+		FillConsoleOutputAttribute(_current_surface, (WORD)color, length, coordinates, &written);
+		WriteConsoleOutputCharacterA(GetStdHandle(STD_OUTPUT_HANDLE), string, length, coordinates, &written);
+	}
+
 
 	Camera& Renderer::get_camera()
 	{

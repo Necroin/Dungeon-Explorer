@@ -33,17 +33,17 @@ void RoomObject::draw_strange_bomb() {
 	int& w = _position.width;
 	int& h = _position.height;
 
-	draw_specific_symbol(AsciiSymbols::double_line_corner_left_up, x, y, GameObject::Color::White);
-	draw_specific_symbol(AsciiSymbols::vertical_line, x + 1, y, GameObject::Color::White);
-	draw_specific_symbol(AsciiSymbols::double_line_corner_right_up, x + 2, y, GameObject::Color::White);
+	draw_specific_symbol(AsciiSymbols::double_line_corner_left_up, x, y, CGE::Color::White);
+	draw_specific_symbol(AsciiSymbols::vertical_line, x + 1, y, CGE::Color::White);
+	draw_specific_symbol(AsciiSymbols::double_line_corner_right_up, x + 2, y, CGE::Color::White);
 
-	draw_specific_symbol(AsciiSymbols::horizontal_line, x, y + 1, GameObject::Color::White);
-	draw_specific_symbol(AsciiSymbols::center_filled_square, x + 1, y + 1, GameObject::Color::White);
-	draw_specific_symbol(AsciiSymbols::horizontal_line, x + 2, y + 1, GameObject::Color::White);
+	draw_specific_symbol(AsciiSymbols::horizontal_line, x, y + 1, CGE::Color::White);
+	draw_specific_symbol(AsciiSymbols::center_filled_square, x + 1, y + 1, CGE::Color::White);
+	draw_specific_symbol(AsciiSymbols::horizontal_line, x + 2, y + 1, CGE::Color::White);
 
-	draw_specific_symbol(AsciiSymbols::double_line_corner_left_down, x, y + 2, GameObject::Color::White);
-	draw_specific_symbol(AsciiSymbols::vertical_line, x + 1, y + 2, GameObject::Color::White);
-	draw_specific_symbol(AsciiSymbols::double_line_corner_right_down, x + 2, y + 2, GameObject::Color::White);
+	draw_specific_symbol(AsciiSymbols::double_line_corner_left_down, x, y + 2, CGE::Color::White);
+	draw_specific_symbol(AsciiSymbols::vertical_line, x + 1, y + 2, CGE::Color::White);
+	draw_specific_symbol(AsciiSymbols::double_line_corner_right_down, x + 2, y + 2, CGE::Color::White);
 }
 
 void RoomObject::draw_rect_borders() 
@@ -54,14 +54,14 @@ void RoomObject::draw_rect_borders()
 		int& h = _position.height;
 
 		fill_room_empty(AsciiSymbols::empty_place_symbol, x, y, w, h);
-		draw_room_border_symbol(x, y, GameObject::Color::White, w);
+		draw_room_border_symbol(x, y, CGE::Color::White, w);
 
 		for (int i = 1; i < h - 1; ++i) {
-			draw_room_border_symbol(x, y + i, GameObject::Color::White, 1);
-			draw_room_border_symbol(x + w - 1, y + i, GameObject::Color::White, 1);
+			draw_room_border_symbol(x, y + i, CGE::Color::White, 1);
+			draw_room_border_symbol(x + w - 1, y + i, CGE::Color::White, 1);
 		}
 
-		draw_room_border_symbol(x, y + h - 1, GameObject::Color::White, w);
+		draw_room_border_symbol(x, y + h - 1, CGE::Color::White, w);
 
 }
 
