@@ -17,12 +17,14 @@ namespace CGE {
 			_game(game)
 		{}
 
+		virtual void event() {}
 		virtual void action() {}
 		virtual void update() {}
 		virtual void render() {}
 	private:
 		void do_frame_interation() {
 			_renderer.swap_surfaces();
+			_game.event();
 			_game.action();
 			_game.update();
 			_game.render();

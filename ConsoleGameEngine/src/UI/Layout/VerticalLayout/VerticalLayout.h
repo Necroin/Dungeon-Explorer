@@ -4,6 +4,10 @@
 #include "../Layout.h"
 
 namespace CGE::UI {
+	/**
+	VerticalLayout(Renderer& renderer, int x, int y, int step = 1, Model model = Model::centre)
+	VerticalLayout(Renderer& renderer, UIObject* parent, int step = 1, Model mode = Model::centre)
+	*/
 	class VerticalLayout : public Layout
 	{
 	public:

@@ -25,31 +25,26 @@ namespace CGE::UI {
 		_color(color)
 	{}
 
-	void PushButton::show() const
+	void PushButton::render()
 	{
-		_renderer.draw_symbol_absolute(218, _position.x, _position.y, _color);
-		_renderer.draw_symbol_absolute(191, _position.x + _position.width - 1, _position.y, _color);
-		_renderer.draw_symbol_absolute(192, _position.x, _position.y + _position.height - 1, _color);
-		_renderer.draw_symbol_absolute(217, _position.x + _position.width - 1, _position.y + _position.height - 1, _color);
+		if (!_hidden) {
+			_renderer.draw_symbol_absolute(218, _position.x, _position.y, _color);
+			_renderer.draw_symbol_absolute(191, _position.x + _position.width - 1, _position.y, _color);
+			_renderer.draw_symbol_absolute(192, _position.x, _position.y + _position.height - 1, _color);
+			_renderer.draw_symbol_absolute(217, _position.x + _position.width - 1, _position.y + _position.height - 1, _color);
 
-		_renderer.draw_symbol_absolute(196, _position.x + 1, _position.y, _color, _text.size());
-		_renderer.draw_symbol_absolute(196, _position.x + 1, _position.y + _position.height - 1, _color, _text.size());
+			_renderer.draw_symbol_absolute(196, _position.x + 1, _position.y, _color, _text.size());
+			_renderer.draw_symbol_absolute(196, _position.x + 1, _position.y + _position.height - 1, _color, _text.size());
 
-		for (size_t i = 1; i < _position.height - 1; ++i) {
-			_renderer.draw_symbol_absolute(179, _position.x, _position.y + i, _color);
-			_renderer.draw_symbol_absolute(179, _position.x + _text.size() + 1, _position.y + i, _color);
-		}
-		_renderer.draw_string_absolute(_text.c_str(), _text.size(), _position.x + 1, _position.y + 1, _color);
-	}
-
-	void PushButton::hide() const
-	{
-		for (size_t i = 0; i < _position.height; i++) {
-			_renderer.draw_symbol_absolute(' ', _position.x, _position.y + i, _color, _position.width);
+			for (size_t i = 1; i < _position.height - 1; ++i) {
+				_renderer.draw_symbol_absolute(179, _position.x, _position.y + i, _color);
+				_renderer.draw_symbol_absolute(179, _position.x + _text.size() + 1, _position.y + i, _color);
+			}
+			_renderer.draw_string_absolute(_text.c_str(), _text.size(), _position.x + 1, _position.y + 1, _color);
 		}
 	}
 
-	void PushButton::event(UIEvent& event)
+	void PushButton::event(const UIEvent& event)
 	{
 		if (auto mouse_event = event.as<UIMouseEvent>()) {
 			if (mouse_event->get_x() >= _position.x && mouse_event->get_x() < _position.x + _position.width &&
@@ -62,7 +57,17 @@ namespace CGE::UI {
 
 	void PushButton::set_text(const std::string& text)
 	{
+		std::size_t prev_width = _position.width;
 		_text = text;
+		_position.width = _text.size() + 2;
+		if (prev_width != _position.width) {
+			decltype(auto) root_update_position = &PushButton::UIObject::update_position;
+			(root()->*root_update_position)();
+			if (!_hidden) {
+				root()->hide();
+				root()->show();
+			}
+		}
 	}
 
 	EventSystem::IEvent<>& PushButton::pressed_event()

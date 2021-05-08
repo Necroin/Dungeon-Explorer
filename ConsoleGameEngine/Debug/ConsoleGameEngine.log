@@ -17,22 +17,4 @@ D:\C++\Dungeon Explorer\ConsoleGameEngine\src\Renderer\Renderer.cpp(125,23): war
 D:\C++\Dungeon Explorer\ConsoleGameEngine\src\Renderer\Renderer.cpp(135,22): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
 D:\C++\Dungeon Explorer\ConsoleGameEngine\src\Renderer\Renderer.cpp(135,25): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
 D:\C++\Dungeon Explorer\ConsoleGameEngine\src\Renderer\Renderer.cpp(137,24): warning C4018: >=: несоответствие типов со знаком и без знака
-  HorizontalLayout.cpp
-  Layout.cpp
-  VerticalLayout.cpp
-  PushButton.cpp
-D:\C++\Dungeon Explorer\ConsoleGameEngine\src\UI\PushButton\PushButton.cpp(30,34): warning C4309: аргумент: усечение константного значения
-D:\C++\Dungeon Explorer\ConsoleGameEngine\src\UI\PushButton\PushButton.cpp(31,34): warning C4309: аргумент: усечение константного значения
-D:\C++\Dungeon Explorer\ConsoleGameEngine\src\UI\PushButton\PushButton.cpp(32,34): warning C4309: аргумент: усечение константного значения
-D:\C++\Dungeon Explorer\ConsoleGameEngine\src\UI\PushButton\PushButton.cpp(33,34): warning C4309: аргумент: усечение константного значения
-D:\C++\Dungeon Explorer\ConsoleGameEngine\src\UI\PushButton\PushButton.cpp(35,34): warning C4309: аргумент: усечение константного значения
-D:\C++\Dungeon Explorer\ConsoleGameEngine\src\UI\PushButton\PushButton.cpp(36,34): warning C4309: аргумент: усечение константного значения
-D:\C++\Dungeon Explorer\ConsoleGameEngine\src\UI\PushButton\PushButton.cpp(38,24): warning C4018: <: несоответствие типов со знаком и без знака
-D:\C++\Dungeon Explorer\ConsoleGameEngine\src\UI\PushButton\PushButton.cpp(39,35): warning C4309: аргумент: усечение константного значения
-D:\C++\Dungeon Explorer\ConsoleGameEngine\src\UI\PushButton\PushButton.cpp(40,35): warning C4309: аргумент: усечение константного значения
-D:\C++\Dungeon Explorer\ConsoleGameEngine\src\UI\PushButton\PushButton.cpp(47,24): warning C4018: <: несоответствие типов со знаком и без знака
-  Text.cpp
-  UIEvent.cpp
-  UIObject.cpp
-  Создание кода...
   ConsoleGameEngine.vcxproj -> D:\C++\Dungeon Explorer\Debug\ConsoleGameEngine.lib

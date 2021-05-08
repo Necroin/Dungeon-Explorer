@@ -36,7 +36,22 @@ namespace CGE::UI {
 
 	UIObject::~UIObject() {}
 
-	void UIObject::event(UIEvent& event) {}
+	void UIObject::show() const
+	{
+		_hidden = false;
+	}
+
+	void UIObject::hide() const
+	{
+		_hidden = true;
+	}
+
+	const bool& UIObject::is_hidden() const
+	{
+		return _hidden;
+	}
+
+	void UIObject::event(const UIEvent& event) {}
 
 	int UIObject::x() const noexcept
 	{

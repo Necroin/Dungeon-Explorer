@@ -35,17 +35,13 @@ namespace CGE::UI {
 		std::size_t prev_width = _position.width;
 		_text = text;
 		_position.width = _text.size();
-		if (!_hiden) _renderer.draw_symbol_absolute(' ', _position.x, _position.y, _color, prev_width);
 		if (prev_width != _position.width) {
 			decltype(auto) root_update_position = &Text::UIObject::update_position;
 			(root()->*root_update_position)();
-			if (!_hiden) {
+			if (!_hidden) {
 				root()->hide();
 				root()->show();
 			}
-		}
-		else {
-			if (!_hiden) _renderer.draw_string_absolute(_text.c_str(), _position.width, _position.x, _position.y, _color);
 		}
 	}
 
@@ -54,29 +50,18 @@ namespace CGE::UI {
 		std::size_t prev_width = _position.width;
 		_text = text;
 		_position.width = _text.size();
-		if (!_hiden) _renderer.draw_symbol_absolute(' ', _position.x, _position.y, _color, prev_width);
 		if (prev_width != _position.width) {
 			decltype(auto) root_update_position = &Text::UIObject::update_position;
 			(root()->*root_update_position)();
-			if (!_hiden) {
+			if (!_hidden) {
 				root()->hide();
 				root()->show();
 			}
 		}
-		else {
-			if (!_hiden)  _renderer.draw_string_absolute(_text.c_str(), _position.width, _position.x, _position.y, _color);
-		}
 	}
 
-	void Text::show() const
+	void Text::render()
 	{
-		_renderer.draw_string_absolute(_text.c_str(), _position.width, _position.x, _position.y, _color);
-		_hiden = false;
-	}
-
-	void Text::hide() const
-	{
-		_renderer.draw_symbol_absolute(' ', _position.x, _position.y, _color, _position.width);
-		_hiden = true;
+		if(!_hidden) _renderer.draw_string_absolute(_text.c_str(), _position.width, _position.x, _position.y, _color);
 	}
 }

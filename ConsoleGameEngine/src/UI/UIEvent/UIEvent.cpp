@@ -10,12 +10,12 @@ namespace CGE::UI {
 		_tag(tag)
 	{}
 
-	int UIMouseEvent::get_x()
+	int UIMouseEvent::get_x() const
 	{
 		return _x;
 	}
 
-	int UIMouseEvent::get_y()
+	int UIMouseEvent::get_y() const
 	{
 		return _y;
 	}

@@ -12,9 +12,15 @@ private:
 	Map _map;
 
 	std::list<std::unique_ptr<CGE::GameObject>> _objects;
+
+	std::unique_ptr<Player> _player;
+
+	std::unique_ptr<CGE::UI::HorizontalLayout> _in_play_buttons;
+	std::unique_ptr<CGE::UI::HorizontalLayout> _characteristics_layout;
+
 public:
 	Game(int game_FPS);
-
+	virtual void event() override;
 	virtual void action() override;
 	virtual void update() override;
 	virtual void render() override;

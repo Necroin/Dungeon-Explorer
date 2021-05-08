@@ -24,11 +24,11 @@ namespace CGE {
 			COORD new_font_size{ font_size, font_size };
 			font_info.cbSize = sizeof(font_info);
 
-			GetCurrentConsoleFontEx(surface, TRUE, &font_info);
-			font_info.dwFontSize = new_font_size;
-			font_info.FontFamily = FF_DONTCARE;
-			font_info.FontWeight = FW_NORMAL;
-			SetCurrentConsoleFontEx(surface, TRUE, &font_info);
+			//GetCurrentConsoleFontEx(surface, TRUE, &font_info);
+			//font_info.dwFontSize = new_font_size;
+			//font_info.FontFamily = FF_DONTCARE;
+			//font_info.FontWeight = FW_NORMAL;
+			//SetCurrentConsoleFontEx(surface, TRUE, &font_info);
 
 			COORD largest_size = GetLargestConsoleWindowSize(surface);
 			SMALL_RECT windowSize = { 0, 0, largest_size.X - 1, largest_size.Y - 1 };
@@ -36,11 +36,11 @@ namespace CGE {
 			SetConsoleWindowInfo(surface, TRUE, &windowSize);
 			SetConsoleDisplayMode(surface, CONSOLE_FULLSCREEN_MODE, &largest_size);
 
-			GetCurrentConsoleFontEx(surface, TRUE, &font_info);
-			font_info.dwFontSize = new_font_size;
-			font_info.FontFamily = FF_DONTCARE;
-			font_info.FontWeight = FW_NORMAL;
-			SetCurrentConsoleFontEx(surface, TRUE, &font_info);
+			//GetCurrentConsoleFontEx(surface, TRUE, &font_info);
+			//font_info.dwFontSize = new_font_size;
+			//font_info.FontFamily = FF_DONTCARE;
+			//font_info.FontWeight = FW_NORMAL;
+			//SetCurrentConsoleFontEx(surface, TRUE, &font_info);
 
 			CONSOLE_CURSOR_INFO cursor_info;
 			GetConsoleCursorInfo(surface, &cursor_info);
@@ -106,7 +106,7 @@ namespace CGE {
 			length -= ((x + length) - (camera_pos.x + camera_pos.width));
 		}
 		FillConsoleOutputAttribute(_current_surface, (WORD)color, length, coordinates, &written);
-		WriteConsoleOutputCharacterA(GetStdHandle(STD_OUTPUT_HANDLE), string, length, coordinates, &written);
+		WriteConsoleOutputCharacterA(_current_surface, string, length, coordinates, &written);
 	}
 
 	void Renderer::draw_symbol_absolute(char symbol, int x, int y, int color)
@@ -138,13 +138,32 @@ namespace CGE {
 			length -= ((x + length) - _max_width);
 		}
 		FillConsoleOutputAttribute(_current_surface, (WORD)color, length, coordinates, &written);
-		WriteConsoleOutputCharacterA(GetStdHandle(STD_OUTPUT_HANDLE), string, length, coordinates, &written);
+		WriteConsoleOutputCharacterA(_current_surface, string, length, coordinates, &written);
 	}
 
 
 	Camera& Renderer::get_camera()
 	{
 		return _camera;
+	}
+
+	COORD Renderer::GetCursorWindowPosition()
+	{
+		POINT pt;
+		GetCursorPos(&pt);
+		HWND hwnd = GetConsoleWindow();
+
+		RECT rc;
+		GetClientRect(hwnd, &rc);
+		ScreenToClient(hwnd, &pt);
+
+		CONSOLE_SCREEN_BUFFER_INFO buffer_info;
+		GetConsoleScreenBufferInfo(_current_surface, &buffer_info);
+
+		COORD coord = { 0, 0 };
+		coord.X = MulDiv(pt.x, buffer_info.srWindow.Right, rc.right);
+		coord.Y = MulDiv(pt.y, buffer_info.srWindow.Bottom, rc.bottom);
+		return coord;
 	}
 
 	void Renderer::swap_surfaces()

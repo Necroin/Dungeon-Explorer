@@ -11,6 +11,7 @@ namespace CGE::UI {
 		GameRect _position;
 		UIObject* _parent;
 		Renderer& _renderer;
+		mutable bool _hidden = true;
 	protected:
 		virtual void update_position();
 		void update_width(int width);
@@ -20,9 +21,11 @@ namespace CGE::UI {
 		UIObject(Renderer& renderer, UIObject* parent, const GameRect& position);
 		virtual ~UIObject();
 	public:
-		virtual void show() const = 0;
-		virtual void hide() const = 0;
-		virtual void event(UIEvent& event);
+		virtual void show() const;
+		virtual void hide() const;
+		const bool& is_hidden() const;
+		virtual void render() = 0;
+		virtual void event(const UIEvent& event);
 		int x() const noexcept;
 		int y() const noexcept;
 		int width() const noexcept;

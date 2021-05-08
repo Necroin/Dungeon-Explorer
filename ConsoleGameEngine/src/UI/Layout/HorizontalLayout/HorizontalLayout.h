@@ -4,6 +4,10 @@
 #include "../Layout.h"
 
 namespace CGE::UI {
+	/**
+	HorizontalLayout(Renderer& renderer, int x, int y, int step = 1, Model objects_model = Model::centre)
+	HorizontalLayout(Renderer& renderer, UIObject* parent, int step = 1, Model objects_model = Model::centre)
+	*/
 	class HorizontalLayout : public Layout
 	{
 	public:

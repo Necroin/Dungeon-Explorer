@@ -17,6 +17,14 @@ namespace CGE::UI {
 			}
 			return nullptr;
 		}
+
+		template<class DerivedEvent>
+		const DerivedEvent* as() const {
+			if (_tag == get_class_tag<DerivedEvent>()) {
+				return static_cast<const DerivedEvent*>(this);
+			}
+			return nullptr;
+		}
 	public:
 		UIEvent(tag_t tag);
 	};
@@ -27,8 +35,8 @@ namespace CGE::UI {
 		int _x;
 		int _y;
 	public:
-		int get_x();
-		int get_y();
+		int get_x() const;
+		int get_y() const;
 	public:
 		UIMouseEvent(int x, int y);
 	};

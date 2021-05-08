@@ -31,6 +31,8 @@ namespace CGE {
 		void render();
 	public:
 		Camera& get_camera();
+	public:
+		COORD GetCursorWindowPosition();
 	};
 };
 #endif

@@ -10,6 +10,7 @@ namespace CGE::UI {
 
 	void Layout::show() const
 	{
+		_hidden = false;
 		for (auto&& object : _objects) {
 			object->show();
 		}
@@ -17,12 +18,22 @@ namespace CGE::UI {
 
 	void Layout::hide() const
 	{
+		_hidden = true;
 		for (auto&& object : _objects) {
 			object->hide();
 		}
 	}
 
-	void Layout::event(UIEvent& event)
+	void Layout::render()
+	{
+		if (!_hidden) {
+			for (auto&& object : _objects) {
+				object->render();
+			}
+		}
+	}
+
+	void Layout::event(const UIEvent& event)
 	{
 		for (auto&& object : _objects) {
 			object->event(event);

@@ -13,9 +13,10 @@ namespace CGE::UI {
 		Layout(Renderer& renderer, UIObject* parent, int x, int y, int step);
 		virtual ~Layout();
 	public:
-		virtual void show() const override;
-		virtual void hide() const override;
-		virtual void event(UIEvent& event) override;
+		virtual void show() const;
+		virtual void hide() const;
+		virtual void render() override;
+		virtual void event(const UIEvent& event) override;
 		std::unique_ptr<UIObject>& operator[](std::size_t index);
 	};
 }
