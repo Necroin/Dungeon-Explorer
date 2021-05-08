@@ -5,4 +5,5 @@
 #include "../Game Object/GameObject.h"
 #include "../Renderer/Renderer.h"
 #include "../CGEGame/CGEGame.h"
+#include "../FSM/FSM.h"
 #endif

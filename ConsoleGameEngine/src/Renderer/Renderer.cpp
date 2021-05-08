@@ -13,11 +13,11 @@ namespace CGE {
 			throw std::exception("CreateConsoleScreenBuffer failed - (%d)");
 		}
 
-		int font_size = 10;
 		for (auto&& surface : _surfaces) {
-			COORD new_font_size{ font_size, font_size };
 			SetConsoleActiveScreenBuffer(surface);
+			int font_size = 10;
 			CONSOLE_FONT_INFOEX font_info;
+			COORD new_font_size{ font_size, font_size };
 			font_info.cbSize = sizeof(font_info);
 
 			GetCurrentConsoleFontEx(surface, TRUE, &font_info);
@@ -48,11 +48,11 @@ namespace CGE {
 			SetConsoleMode(surface, console_prev_mode & ~ENABLE_QUICK_EDIT_MODE);
 		}
 
-		HWND hwnd = GetConsoleWindow();
-		EnableScrollBar(hwnd, SB_BOTH, ESB_DISABLE_BOTH);
+		HWND current_console_window = GetConsoleWindow();
+		ShowScrollBar(current_console_window, SB_BOTH, FALSE);
+		EnableScrollBar(current_console_window, SB_BOTH, ESB_DISABLE_BOTH);
 		_current_surface = _surfaces[_current_surface_index];
 		SetConsoleActiveScreenBuffer(_current_surface);
-
 
 		CONSOLE_SCREEN_BUFFER_INFO buffer_info;
 		GetConsoleScreenBufferInfo(_current_surface, &buffer_info);
@@ -75,10 +75,22 @@ namespace CGE {
 		FillConsoleOutputCharacterA(surface, ' ', cell_count, COORD{ 0,0 }, &written);
 	}
 
+	void Renderer::draw_symbol(char symbol, int x, int y, int color)
+	{
+		DWORD written;
+		COORD coordinates{ _camera.translate_x_coordinate(x), _camera.translate_y_coordinate(y) };
+		FillConsoleOutputAttribute(_current_surface, (WORD)color, 1, coordinates, &written);
+		FillConsoleOutputCharacterA(_current_surface, static_cast<CHAR>(symbol), 1, coordinates, &written);
+	}
+
 	void Renderer::draw_symbol(char symbol, int x, int y, int color, size_t count)
 	{
 		DWORD written;
 		COORD coordinates{ _camera.translate_x_coordinate(x), _camera.translate_y_coordinate(y) };
+		decltype(auto) camera_pos = _camera.get_position();
+		if ((x + count - 1) >= (camera_pos.x + camera_pos.width)) {
+			count -= ((x + count) - (camera_pos.x + camera_pos.width));
+		}
 		FillConsoleOutputAttribute(_current_surface, (WORD)color, count, coordinates, &written);
 		FillConsoleOutputCharacterA(_current_surface, static_cast<CHAR>(symbol), count, coordinates, &written);
 	}

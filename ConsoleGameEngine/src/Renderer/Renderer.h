@@ -17,7 +17,8 @@ namespace CGE {
 		Renderer();
 		~Renderer();
 	public:
-		void draw_symbol(char symbol, int x, int y, int color, size_t count = 1);
+		void draw_symbol(char symbol, int x, int y, int color);
+		void draw_symbol(char symbol, int x, int y, int color, size_t count);
 		void swap_surfaces();
 		void render();
 	public:

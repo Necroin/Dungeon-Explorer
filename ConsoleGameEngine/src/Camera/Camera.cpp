@@ -17,13 +17,13 @@ namespace CGE {
 
 	GameRect Camera::translate_coordinates(int x, int y)
 	{
-		return { x - _position.x, y - _position.y };
+		return { translate_x_coordinate(x), translate_y_coordinate(y) };
 	}
 
 	GameRect Camera::translate_coordinates(GameRect position)
 	{
-		position.x -= _position.x;
-		position.y -= _position.y;
+		position.x = translate_x_coordinate(position.x);
+		position.y = translate_y_coordinate(position.y);
 		return position;
 	}
 

@@ -1,0 +1,9 @@
+﻿  Renderer.cpp
+D:\C++\Dungeon Explorer\ConsoleGameEngine\src\Renderer\Renderer.cpp(20,25): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
+D:\C++\Dungeon Explorer\ConsoleGameEngine\src\Renderer\Renderer.cpp(20,36): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
+D:\C++\Dungeon Explorer\ConsoleGameEngine\src\Renderer\Renderer.cpp(81,52): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
+D:\C++\Dungeon Explorer\ConsoleGameEngine\src\Renderer\Renderer.cpp(81,87): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
+D:\C++\Dungeon Explorer\ConsoleGameEngine\src\Renderer\Renderer.cpp(89,52): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
+D:\C++\Dungeon Explorer\ConsoleGameEngine\src\Renderer\Renderer.cpp(89,87): warning C4838: Преобразование из "int" в "SHORT" требует сужающего преобразования.
+D:\C++\Dungeon Explorer\ConsoleGameEngine\src\Renderer\Renderer.cpp(91,23): warning C4018: >=: несоответствие типов со знаком и без знака
+  ConsoleGameEngine.vcxproj -> D:\C++\Dungeon Explorer\Debug\ConsoleGameEngine.lib

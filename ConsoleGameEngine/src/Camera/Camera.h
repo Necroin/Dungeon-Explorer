@@ -4,7 +4,7 @@
 #include"../Game Object/GameObject.h"
 
 namespace CGE {
-	class Camera : GameObject {
+	class Camera : public GameObject {
 	public:
 		Camera();
 	public:

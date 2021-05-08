@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="src\Camera\Camera.h" />
     <ClInclude Include="src\CGE_include\CGE.h" />
+    <ClInclude Include="src\FSM\FSM.h" />
     <ClInclude Include="src\Game Object\GameObject.h" />
     <ClInclude Include="src\CGEGame\CGEGame.h" />
     <ClInclude Include="src\Renderer\Renderer.h" />

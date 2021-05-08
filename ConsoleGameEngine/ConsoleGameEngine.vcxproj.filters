@@ -33,6 +33,9 @@
     <ClInclude Include="src\std_includes.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\FSM\FSM.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Game Object\GameObject.cpp">
