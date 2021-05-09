@@ -16,24 +16,28 @@ Game::Game(int game_FPS) :
 	decltype(auto) characteristics_button = _in_play_buttons->add_object<CGE::UI::PushButton>(_renderer, "Characteristics", CGE::Color::White, _in_play_buttons.get());
 	decltype(auto) inventory_button = _in_play_buttons->add_object<CGE::UI::PushButton>(_renderer, "Inventory", CGE::Color::White, _in_play_buttons.get());
 
-
-	_characteristics_layout = std::make_unique<CGE::UI::HorizontalLayout>(
+	_characteristics_layout_frame = std::make_unique<CGE::UI::Frame<CGE::UI::HorizontalLayout>>(
 		_renderer,
-		_in_play_buttons->position().x + 2,
-		_in_play_buttons->position().y + _in_play_buttons->position().height + 2,
+		_in_play_buttons->position().x,
+		_in_play_buttons->position().y + _in_play_buttons->position().height,
+		CGE::Color::White);
+
+	decltype(auto) characteristics_layout = _characteristics_layout_frame->add_object(
+		_renderer,
+		_characteristics_layout_frame.get(),
 		1,
 		CGE::UI::HorizontalLayout::Model::centre);
 
-	decltype(auto) characteristics_name_layout = _characteristics_layout->add_object<CGE::UI::VerticalLayout>(
+	decltype(auto) characteristics_name_layout = characteristics_layout.add_object<CGE::UI::VerticalLayout>(
 		_renderer, 
-		_characteristics_layout.get(),
+		&characteristics_layout,
 		1,
 		CGE::UI::VerticalLayout::Model::left
 		);
 
-	decltype(auto) characteristics_value_layout = _characteristics_layout->add_object<CGE::UI::VerticalLayout>(
+	decltype(auto) characteristics_value_layout = characteristics_layout.add_object<CGE::UI::VerticalLayout>(
 		_renderer,
-		_characteristics_layout.get(),
+		&characteristics_layout,
 		1,
 		CGE::UI::VerticalLayout::Model::left
 		);
@@ -42,15 +46,19 @@ Game::Game(int game_FPS) :
 
 	characteristics_value_layout.add_object<CGE::UI::Text>(_renderer, "10", CGE::Color::White, &characteristics_name_layout);
 
+	characteristics_name_layout.add_object<CGE::UI::Text>(_renderer, "Attack", CGE::Color::White, &characteristics_name_layout);
+
+	characteristics_value_layout.add_object<CGE::UI::Text>(_renderer, "1", CGE::Color::White, &characteristics_name_layout);
+
 
 	characteristics_button.pressed_event() += CGE::EventSystem::createFunctorEventHandler([
-			&characteristics_layout = _characteristics_layout
+			&characteristics_layout_frame = _characteristics_layout_frame
 	]() {
-			if (characteristics_layout->is_hidden()) {
-				characteristics_layout->show();
+			if (characteristics_layout_frame->is_hidden()) {
+				characteristics_layout_frame->show();
 			}
 			else {
-				characteristics_layout->hide();
+				characteristics_layout_frame->hide();
 			}
 		});
 
@@ -102,5 +110,5 @@ void Game::render()
 	}
 	_player->render();
 	_in_play_buttons->render();
-	_characteristics_layout->render();
+	_characteristics_layout_frame->render();
 }

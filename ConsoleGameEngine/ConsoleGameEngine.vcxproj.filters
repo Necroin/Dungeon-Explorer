@@ -75,6 +75,9 @@
     <ClInclude Include="src\Bases\Tag\Tag.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\UI\Frame\Frame.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Game Object\GameObject.cpp">

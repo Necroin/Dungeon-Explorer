@@ -16,7 +16,7 @@ private:
 	std::unique_ptr<Player> _player;
 
 	std::unique_ptr<CGE::UI::HorizontalLayout> _in_play_buttons;
-	std::unique_ptr<CGE::UI::HorizontalLayout> _characteristics_layout;
+	std::unique_ptr<CGE::UI::Frame<CGE::UI::HorizontalLayout>> _characteristics_layout_frame;
 
 public:
 	Game(int game_FPS);

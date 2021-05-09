@@ -19,7 +19,7 @@ namespace CGE::UI {
 		}
 
 		template<class DerivedEvent>
-		const DerivedEvent* as() const {
+		const DerivedEvent* const as() const {
 			if (_tag == get_class_tag<DerivedEvent>()) {
 				return static_cast<const DerivedEvent*>(this);
 			}

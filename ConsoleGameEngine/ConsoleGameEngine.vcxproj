@@ -159,6 +159,7 @@
     <ClInclude Include="src\CGEGame\CGEGame.h" />
     <ClInclude Include="src\Renderer\Renderer.h" />
     <ClInclude Include="src\std_includes.h" />
+    <ClInclude Include="src\UI\Frame\Frame.h" />
     <ClInclude Include="src\UI\Layout\HorizontalLayout\HorizontalLayout.h" />
     <ClInclude Include="src\UI\Layout\Layout.h" />
     <ClInclude Include="src\UI\Layout\VerticalLayout\VerticalLayout.h" />
